@@ -1,0 +1,19 @@
+app: serviceswap
+
+service: service-swap
+frameworkVersion: '1.83.3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  region: sa-east-1
+  lambdaHashingVersion: '20201221'
+  timeout: 30
+  AWS.environment: ${file(ymls/environment.yml)}
+
+functions: ${file(ymls/functions.yml)}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline

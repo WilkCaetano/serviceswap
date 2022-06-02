@@ -1,0 +1,4 @@
+PORT: ${env:PORT}
+GIT_HUB_REPO: ${env:GIT_HUB_REPO}
+WEB_HOOK: ${env:WEB_HOOK}
+DATA_BASE: ${env:DATA_BASE}
